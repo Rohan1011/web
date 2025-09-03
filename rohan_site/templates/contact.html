@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Contact</h1>
+<form method="post" class="form">
+  <label>Name <input type="text" name="name" required></label>
+  <label>Email <input type="email" name="email" required></label>
+  <label>Phone <input type="text" name="phone"></label>
+  <label>Message <textarea name="message" required></textarea></label>
+  <button type="submit">Send</button>
+</form>
+{% endblock %}
