@@ -1,0 +1,9 @@
+# Place this at ~/.cloudflared/config.yml on the Debian server (adjust credentials-file path)
+tunnel: rohan-prod
+credentials-file: /home/USER/.cloudflared/TUNNEL_UUID.json
+ingress:
+  - hostname: rohan-reddy.com
+    service: http://localhost:8000
+  - hostname: www.rohan-reddy.com
+    service: http://localhost:8000
+  - service: http_status:404

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Business Page</h1>
+<form method="post" enctype="multipart/form-data" class="form">
+  <label>Hero Title <input type="text" name="hero_title" value="{{ hero_title }}"></label>
+  <label>Hero Subtitle <input type="text" name="hero_subtitle" value="{{ hero_subtitle }}"></label>
+  <fieldset>
+    <legend>Add image</legend>
+    <label>Image <input type="file" name="image" accept="image/*"></label>
+    <label>Title <input type="text" name="img_title"></label>
+    <label>Alt text <input type="text" name="img_alt"></label>
+  </fieldset>
+  <button type="submit">Save</button>
+</form>
+
+<h2>Current Gallery</h2>
+<div class="gallery">
+  {% for img in gallery %}
+  <figure>
+    <img src="{{ url_for('uploaded_file', filename=img.filename) }}" alt="{{ img.alt or '' }}">
+    {% if img.title %}<figcaption>{{ img.title }}</figcaption>{% endif %}
+  </figure>
+  {% else %}
+  <p>No images yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

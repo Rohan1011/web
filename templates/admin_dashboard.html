@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Admin Dashboard</h1>
+<ul>
+  <li>Total enquiries: {{ enquiries_count }}</li>
+  <li>Total images: {{ images_count }}</li>
+  <li>Total news items: {{ news_count }}</li>
+</ul>
+<p><a href="{{ url_for('admin_business') }}">Edit business page</a> · <a href="{{ url_for('admin_enquiries') }}">View enquiries</a></p>
+{% endblock %}
